@@ -149,7 +149,8 @@ async def list_warns(message: types.Message):
 
     text = f"⚠️ <b>{member.full_name}</b> ning ogohlantirishlari ({len(warns)}/{settings['max_warns']}):\n\n"
     for i, warn in enumerate(warns, 1):
-        text += f"  {i}. {warn['reason'] or 'Sabab ko\'rsatilmagan'}\n"
+        reason = warn['reason'] if warn['reason'] else "Sabab ko'rsatilmagan"
+        text += f"  {i}. {reason}\n"
         text += f"     👮 {warn['admin_name']} | 📅 {warn['created_at'][:16]}\n"
 
     await message.answer(text)
