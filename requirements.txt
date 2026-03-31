@@ -1,4 +1,12 @@
-aiogram~=2.14
-environs~=8.0.0
-marshmallow<4.0.0
-aiosqlite>=0.20.0
+# Telegram Bot Framework
+aiogram>=2.14,<3.0
+
+# Environment variables management
+environs>=8.0.0,<9.0.0
+marshmallow>=3.0,<4.0.0
+
+# Async SQLite database
+aiosqlite>=0.20.0,<1.0.0
+
+# Production server
+gunicorn>=20.1.0,<21.0.0
